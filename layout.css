@@ -1,0 +1,39 @@
+/* Especificidad =  001 */
+body{
+	display: grid;
+	grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+	grid-template-rows: 20% 1fr 15%;
+	grid-template-columns: 20% 1fr 15%;
+	grid-row-gap: 1em;
+}
+/* Especificidad =  001 */
+footer {
+	grid-area: footer;
+    align-self: center;
+}
+/* Especificidad =  001 */
+main {
+	grid-area: main;
+    align-self: center;
+    margin: auto;
+}
+/* specificity = 001 */
+nav {	
+    align-self: center;
+}
+/* Especificidad =  001 */
+header{
+    grid-area: header;
+	text-align: center;
+}
+
+/* Especificidad =  001 */
+header,
+footer,
+nav
+{
+  margin: 0.9em;
+}
