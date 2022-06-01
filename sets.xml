@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sets[
+<!ELEMENT sets (set+)>
+<!ELEMENT set (descripcion,imagenes,periodoRotacion,arquetipos)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT imagenes (imagen+)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT periodoRotacion (fechaInicio,fechaFin)>
+<!ELEMENT fechaInicio (#PCDATA)>
+<!ELEMENT fechaFin (#PCDATA)>
+<!ELEMENT arquetipos (arquetipo+)>
+<!ELEMENT arquetipo (colorPrincipal,estiloJuego,rivalesFavorables,rivalesDesfavorables,sidedeck)>
+<!ELEMENT colorPrincipal (#PCDATA)>
+<!ELEMENT estiloJuego (#PCDATA)>
+<!ELEMENT rivalesFavorables (rivalFavorable+)>
+<!ELEMENT rivalFavorable (#PCDATA)>
+<!ELEMENT rivalesDesfavorables (rivalDesfavorable+)>
+<!ELEMENT rivalDesfavorable (#PCDATA)>
+<!ELEMENT sidedeck (carta+)>
+<!ELEMENT carta (remplazos)>
+<!ELEMENT remplazos (remplazo+)>
+<!ELEMENT remplazo (#PCDATA)>
+<!ATTLIST set nombre CDATA #REQUIRED>
+<!ATTLIST set codigo CDATA #REQUIRED>
+<!ATTLIST arquetipo nombre CDATA #REQUIRED>
+<!ATTLIST carta nombre CDATA #REQUIRED>
+]>
+<sets>
+	<set nombre="Dungeons And Dragons" codigo="AFC">
+		<descripcion>Set inspirado en el popular juego de rol de dragones y mazmorras.</descripcion>
+		<imagenes>
+			<imagen>multimedia/AFC1.png</imagen>
+			<imagen>multimedia/AFC2.png</imagen>
+		</imagenes>
+		<periodoRotacion>
+			<fechaInicio>2021-06-23</fechaInicio>
+			<fechaFin>2023-06-23</fechaFin>
+		</periodoRotacion>
+		<arquetipos>
+			<arquetipo nombre="Aura del coraje">
+				<colorPrincipal>Blanco.</colorPrincipal>
+				<estiloJuego>Gran diversidad de hechizos y posibilidad de lanzar cartas desde la cima del mazo.</estiloJuego>
+				<rivalesFavorables>
+					<rivalFavorable>Mazos agresivos.</rivalFavorable>
+					<rivalFavorable>Mazos de color negro.</rivalFavorable>
+				</rivalesFavorables>
+				<rivalesDesfavorables>
+					<rivalDesfavorable>Mazos de control.</rivalDesfavorable>
+					<rivalDesfavorable>Mazos de color rojo.</rivalDesfavorable>
+				</rivalesDesfavorables>
+				<sidedeck>
+					<carta nombre="Galea, brindador de esperanza.">
+						<remplazos>
+							<remplazo>Falco Spara, tejepactos.</remplazo>
+							<remplazo>Elsha del infinito.</remplazo>
+						</remplazos>
+					</carta>
+					<carta nombre="Sram, el arquitecto.">
+						<remplazos>
+							<remplazo>Kor, bailarina espiritual.</remplazo>
+							<remplazo>Paladín del hierro eterno.</remplazo>
+						</remplazos>
+					</carta>
+				</sidedeck>
+			</arquetipo>
+			<arquetipo nombre="Mazmorra de la muerte">
+				<colorPrincipal>Negro.</colorPrincipal>
+				<estiloJuego>Introducción a la mecánica de mazmorra y sinergia con el cementerio.</estiloJuego>
+				<rivalesFavorables>
+					<rivalFavorable>Mazos de control.</rivalFavorable>
+					<rivalFavorable>Mazos de color verde.</rivalFavorable>
+				</rivalesFavorables>
+				<rivalesDesfavorables>
+					<rivalDesfavorable>Mazos con buena capacidad de robo.</rivalDesfavorable>
+					<rivalDesfavorable>Mazos de color rojo.</rivalDesfavorable>
+				</rivalesDesfavorables>
+				<sidedeck>
+					<carta nombre="Sefris de los caminos prohibidos.">
+						<remplazos>
+							<remplazo>Tameshi, arquitecto de realidades.</remplazo>
+							<remplazo>Sacerdote de los ritos perdidos.</remplazo>
+						</remplazos>
+					</carta>
+					<carta nombre="Necromago maldito.">
+						<remplazos>
+							<remplazo>El vigilante del infierno.</remplazo>
+							<remplazo>Necromago aprendiz.</remplazo>
+							<remplazo>Susurros, la sangre durmiente..</remplazo>
+						</remplazos>
+					</carta>
+				</sidedeck>
+			</arquetipo>
+		</arquetipos>
+	</set>
+	<set nombre="Kamigawa: La dinastía del Neon" codigo="NEC">
+		<descripcion>Set inspirado en la dinastía japonesa siguiendo una temática futurística.</descripcion>
+		<imagenes>
+			<imagen>multimedia/NEC1.png</imagen>
+			<imagen>multimedia/NEC2.png</imagen>
+		</imagenes>
+		<periodoRotacion>
+			<fechaInicio>2022-02-18</fechaInicio>
+			<fechaFin>2024-06-23</fechaFin>
+		</periodoRotacion>
+		<arquetipos>
+			<arquetipo nombre="¡Armándose!">
+				<colorPrincipal>Azul.</colorPrincipal>
+				<estiloJuego>Uso de la mecánica propia del set de vehículos y gran robo de cartas.</estiloJuego>
+				<rivalesFavorables>
+					<rivalFavorable>Mazos de juego tardío.</rivalFavorable>
+					<rivalFavorable>Mazos de color verde.</rivalFavorable>
+				</rivalesFavorables>
+				<rivalesDesfavorables>
+					<rivalDesfavorable>Mazos de tempo.</rivalDesfavorable>
+					<rivalDesfavorable>Mazos de color azul.</rivalDesfavorable>
+				</rivalesDesfavorables>
+				<sidedeck>
+					<carta nombre="Kotori, pilota prodigio.">
+						<remplazos>
+							<remplazo>Linvala, el escudo del mar.</remplazo>
+							<remplazo>Profesor de combate.</remplazo>
+						</remplazos>
+					</carta>
+					<carta nombre="Jace, arquitecto de pensamientos.">
+						<remplazos>
+							<remplazo>Jace, el escultor de mentes.</remplazo>
+							<remplazo>Ashiok, la musa de las pesadillas.</remplazo>
+						</remplazos>
+					</carta>
+				</sidedeck>
+			</arquetipo>
+			<arquetipo nombre="Mejoras desatadas">
+				<colorPrincipal>Verde.</colorPrincipal>
+				<estiloJuego>Gran número de mejoras que aportan versatilidad al jugador.</estiloJuego>
+				<rivalesFavorables>
+					<rivalFavorable>Mazos de tempo.</rivalFavorable>
+					<rivalFavorable>Mazos de color rojo.</rivalFavorable>
+				</rivalesFavorables>
+				<rivalesDesfavorables>
+					<rivalDesfavorable>Mazos con muchos hechizos.</rivalDesfavorable>
+					<rivalDesfavorable>Mazos de color blanco.</rivalDesfavorable>
+				</rivalesDesfavorables>
+				<sidedeck>
+					<carta nombre="Chishiro, de la espada fragmentada.">
+						<remplazos>
+							<remplazo>Kaima, de la calma fracturada.</remplazo>
+							<remplazo>Trynn, campeón de la libertad.</remplazo>
+						</remplazos>
+					</carta>
+					<carta nombre="Grumgully, el generoso.">
+						<remplazos>
+							<remplazo>Ulasht, la semilla del odio.</remplazo>
+							<remplazo>Hydra del apocalipsis.</remplazo>
+						</remplazos>
+					</carta>
+				</sidedeck>
+			</arquetipo>
+		</arquetipos>
+	</set>
+</sets>

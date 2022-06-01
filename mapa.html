@@ -12,7 +12,8 @@
 			Uniovi the Gathering - Mapa
 		 </title>
 		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
-		 <link rel="stylesheet" type="text/css" href="estilos/layout.css"/>	 
+		 <link rel="stylesheet" type="text/css" href="estilos/layout.css"/>
+		 <script src= "Mapa.js"></script>
 	</head>
 	
 	<body>
@@ -27,7 +28,22 @@
 				  <a title="Contacto sobre UtG" href="contacto.html">Contacto</a>
 			</nav>
 		</header>
+		<body onload="mapa.mostrarMapaDinamico()">    
+
+		<p>Mapa dinamico con posibilidad de añadir marcadores a los concejos más poblados de Asturias</p>
+		<input type="button" value="Gijón" onclick="mapa.localizacion('Gijón')"/>
+		<input type="button" value="Oviedo" onclick="mapa.localizacion('Oviedo')"/>
+		<input type="button" value="Avilés" onclick="mapa.localizacion('Avilés')"/>
+		<input type="button" value="Siero" onclick="mapa.localizacion('Siero')"/>
+		<input type="button" value="Langreo" onclick="mapa.localizacion('Langreo')"/>
+		<input type="button" value="Mieres" onclick="mapa.localizacion('Mieres')"/>
+		<input type="button" value="Castrillón" onclick="mapa.localizacion('Castrillón')"/>
+		<input type="button" value="San Martín del Rey Aurelio" onclick="mapa.localizacion('San Martín del Rey Aurelio')"/>
+		<input type="button" value="Corvera de Asturias" onclick="mapa.localizacion('Corvera de Asturias')"/>
+		<input type="button" value="Villaviciosa" onclick="mapa.localizacion('Villaviciosa')"/>
 		
+		<main id='map'></main>
+	
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
 				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />

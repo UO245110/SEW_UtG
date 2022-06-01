@@ -1,0 +1,24 @@
+<!ELEMENT sets (set+)>
+<!ELEMENT set (descripcion,imagenes,periodoRotacion,arquetipos)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT imagenes (imagen+)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT periodoRotacion (fechaInicio,fechaFin)>
+<!ELEMENT fechaInicio (#PCDATA)>
+<!ELEMENT fechaFin (#PCDATA)>
+<!ELEMENT arquetipos (arquetipo+)>
+<!ELEMENT arquetipo (colorPrincipal,estiloJuego,rivalesFavorables,rivalesDesfavorables,sidedeck)>
+<!ELEMENT colorPrincipal (#PCDATA)>
+<!ELEMENT estiloJuego (#PCDATA)>
+<!ELEMENT rivalesFavorables (rivalFavorable+)>
+<!ELEMENT rivalFavorable (#PCDATA)>
+<!ELEMENT rivalesDesfavorables (rivalDesfavorable+)>
+<!ELEMENT rivalDesfavorable (#PCDATA)>
+<!ELEMENT sidedeck (carta+)>
+<!ELEMENT carta (remplazos)>
+<!ELEMENT remplazos (remplazo+)>
+<!ELEMENT remplazo (#PCDATA)>
+<!ATTLIST set nombre CDATA #REQUIRED>
+<!ATTLIST set codigo CDATA #REQUIRED>
+<!ATTLIST arquetipo nombre CDATA #REQUIRED>
+<!ATTLIST carta nombre CDATA #REQUIRED>
