@@ -11,29 +11,31 @@
 		 <title>
 			Uniovi the Gathering - Mazos
 		 </title>
-		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
 		 <link rel="stylesheet" type="text/css" href="estilos/layout.css"/>
+		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
 		  <!--Include jQuery-->
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		 <script defer src="mazos.js"></script>
 	</head>
 	
-	<body>
+	<body onload="aLoader.cargarDatos()">
 		<header>
 		<h1> Menú navegación - UtG </h1>
 			<nav>
-				  <a title="Página inicial de Uniovi the Gathering." href="index.html">Index</a>
+				  <a title="Página inicial de Uniovi the Gathering." href="index.html">Inicio</a>
 				  <a title="Historia sobre Magic the Gathering." href="historia.html">Historia</a>
-				  <a title="Mapa de tiendas de MtG." href="mapa.html">Mapa</a> 
+				  <a title="Mapa de tiendas de MtG." href="mapa.html">Mapa</a>
 				  <a title="Colección de mazos de MtG" href="mazos.html">Mazos</a>
-				  <a title="Ofertas de mazos de MtG" href="ofertas.html">Ofertas</a>
+				  <a title="Ofertas de mazos de MtG" href="ofertas.php">Ofertas</a>
 				  <a title="Contacto sobre UtG" href="contacto.html">Contacto</a>
+				  <a title="Gadgets de UtG" href="gadgets.html">Gadgets</a>
 			</nav>
 		</header>
 		
 		<main>
-			<script src="mazos.js"></script>
+			<button onclick="aLoader.colecciones[0].construirHTML()">Cargar colección</button>
 		</main>
-		
+			
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
 				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />

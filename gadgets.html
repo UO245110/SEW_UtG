@@ -9,20 +9,17 @@
 		 <meta name = "author" content="Xurde Mares Omar">
 		 <meta name ="viewport" content ="width=device-width, initial scale=1.0" />
 		 <title>
-			Uniovi the Gathering - Mapa
+			Uniovi the Gathering - Mazos
 		 </title>
-		 <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-		 <script src='https://api.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js'></script>
-		 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
-		 
-	     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet'/>
-		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
 		 <link rel="stylesheet" type="text/css" href="estilos/layout.css"/>
-		 <link rel="stylesheet" type="text/css" href="estilos/mapa.css"/>
-		 <script src= "mapa.js"></script>
+		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
+		  <!--Include jQuery-->
+		 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		 <script defer src="evaluadorCarta.js"></script>
+		 <script defer src="conversor.js"></script>
 	</head>
 	
-	<body>
+	<body onload="aConversor.cargarDatos()">
 		<header>
 		<h1> Menú navegación - UtG </h1>
 			<nav>
@@ -35,12 +32,18 @@
 				  <a title="Gadgets de UtG" href="gadgets.html">Gadgets</a>
 			</nav>
 		</header>
-
-		<main id='map'>
-			<input type="button" value="Cargar mapa estático" onclick="localizacion.mostrarMapaDinamico()">
+		
+		<main>
+			<p>Introduzca el valor de su carta en dolares (Separación con punto):</p>
+			<textarea title="valorOriginal" id = "valorOriginal">0</textarea>
+			<textarea title="valorCalculado" id = "valorCalculado" disabled></textarea>
+			<input type="button" value="Realizar cálculo" onclick="aConversor.aEuros()">
+			
+			<label for="iCarta">Seleccione la imagen de su carta para calcular su estado:</label>
+			<input id="iCarta" type="file" name="iCarta" onchange="evaluador.evaluarCarta()">
+			<p id="calidadCarta">Para evaluar la condición de su carta, adjúntela.</p>
 		</main>
-		
-		
+			
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
 				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />

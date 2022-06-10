@@ -5,10 +5,9 @@ body{
     "header header header"
     "main main main"
     "footer footer footer";
-	grid-template-rows: 20% 1fr 15%;
-	grid-template-columns: 20% 1fr 15%;
 	grid-row-gap: 1em;
 }
+
 /* Especificidad =  001 */
 footer {
 	grid-area: footer;
@@ -18,7 +17,7 @@ footer {
 main {
 	grid-area: main;
     align-self: center;
-    margin: auto;
+    /*margin: auto;*/
 }
 /* specificity = 001 */
 nav {	
