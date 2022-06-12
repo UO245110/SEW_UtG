@@ -24,7 +24,7 @@
 	
 	<body>
 		<header>
-		<h1> Menú navegación - UtG </h1>
+		<h1> Zona de Mapas - UtG </h1>
 			<nav>
 				  <a title="Página inicial de Uniovi the Gathering." href="index.html">Inicio</a>
 				  <a title="Historia sobre Magic the Gathering." href="historia.html">Historia</a>
@@ -37,16 +37,25 @@
 		</header>
 
 		<main id='map'>
-			<input type="button" value="Cargar mapa estático" onclick="localizacion.mostrarMapaDinamico()">
+			<section>
+			<h2> Mapa ubicado en tu geolocalización</h2>
+			<p> Si quieres cargar un mapa centrado en tu ubicación con las tiendas asociadas con UtG, solo debes:</p>
+			<ol>
+				<li>Permitir saber tu ubicación en tu navegador. </li>
+				<li>Clicar el botón que se encuentra a continuación.</li>
+			</ol>
+			<input type="button" value="Pinchar aquí para cargar mapa" onclick="localizacion.mostrarMapaDinamico()">
+			<p> Si has denegado sin querer el permiso, puedes reiniciar la página con la tecla F5.</p>
+			</section>
 		</main>
 		
 		
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
-				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />
-				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" />
-				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" />
-		</footer>	
+				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" title="Logo de la Universidad de Oviedo"/>
+				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" title="Logo de validez de HTML5"/>
+				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" title="Logo de validez de CSS3" />
+		</footer>
 	</body>
 
 </html>

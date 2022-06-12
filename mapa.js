@@ -24,9 +24,25 @@ class Geolocalization{
             [-5.854152942331615,43.36683218671677]
         ];
 		
+		this.referencias = [
+            ["Videojuegos Marisol"],
+            ["Tienda de Cartas Gonzalo"],
+            ["Juguetería Jugetos"],
+            ["Almacén del mago: Comercio"],
+            ["Juguetería Crisol"],
+            ["Tienda de cartas Palacio"],
+            ["Muséo de cartas Magic"],
+            ["Callejón Diagón"],
+            ["Cartas y más"],
+            ["La chistera del conejo"]
+        ];
+		
 		//Estático:
 		this.mapSize = 0.05;
         this.size = [750, 400];
+		
+		//Si no podemos cargar la posición:
+		this.center = [-5.699953202521691, 43.54068232376046];
 		
 		//Cargamos la posición:
 		 navigator.geolocation.getCurrentPosition(this.cargarUbicacion.bind(this),this.verErrores.bind(this));
@@ -74,7 +90,8 @@ class Geolocalization{
         document.getElementById("map").innerHTML = "<img src='"+rutaMapa+"' alt='mapa estático' />";
     }
 	
-	mostrarMapaDinamico(){       
+	mostrarMapaDinamico(){      
+		
         mapboxgl.accessToken = this.apiKey;
         var map = new mapboxgl.Map({
 			  container: this.container, // Specify the container ID
@@ -84,11 +101,18 @@ class Geolocalization{
         });
 		
 		for (var index = 0; index < this.localizaciones.length; index++) {
+			var popup = new mapboxgl.Popup()
+			.setText(this.referencias[index])
+			.addTo(map);
+			
+			console.log(popup);
+			
 			const marcador = new mapboxgl.Marker()
             .setLngLat(this.localizaciones[index])
-            .addTo(map);
+            .addTo(map)
+			.setPopup(popup);
 			}
-      }     
+		}     
 }
 
 var localizacion = new Geolocalization();

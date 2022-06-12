@@ -26,7 +26,7 @@ class evaluadorCarta{
 		let carta = cartas[0]
 		console.log(cartas);
 		this.obtenerCalidad();
-        document.getElementById("calidadCarta").innerHTML = "<p> La calidad de: " + carta.name + " es: " + this.calidad + "</p>";		
+        document.getElementById("calidadCarta").innerHTML = "La calidad de: " + carta.name + " es: " + this.calidad;		
     }
 
 }

@@ -1,11 +1,18 @@
 /* Especificidad =  001 */
 table,th, td{
+	border: 0.2em solid black;
 	border-collapse: collapse;
-	border: 0.1em solid black;
 	text-align: center;	
 }
+
+table{
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /* Especificidad =  001 */
 th{
+	color: #ffffff;
 	background-color: #6a142b;
-	color: white;
+	
 }

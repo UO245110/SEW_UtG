@@ -12,6 +12,7 @@
 			Uniovi the Gathering - Ofertas
 		 </title>
 		 <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
+		 <link rel="stylesheet" type="text/css" href="estilos/tabla.css"/>
 		 <link rel="stylesheet" type="text/css" href="estilos/layout.css"/>
 	</head>
 	
@@ -48,7 +49,13 @@
                     $this->response = array();
                 }
 		
-					
+				public function inicioOffers()	{
+					echo "<h2> Ofertas de cartas en UtG </h2>";
+					echo "<p> La siguiente tabla muestra cada una de las ofertas que constan en el sistema, de momento el 
+					número de unidades es ilimitadas. Pero por favor tenga cuidado con comprobar que la calidade de la carta se 
+					adapte a sus necesidades.</p>";
+				}
+				
 				public function selectOffers(){
 					$connection = new mysqli($this->host, $this->user, $this->password, $this->database);
                     /* check connection */
@@ -67,17 +74,23 @@
                                 while ($data = $return->fetch_assoc()) {
 									 $this->response['selectOffers'] .= "
 										<tr>
-											<td>".$data["Name"]."</td> 
-											<td>".$data["Price"]."</td> 
-											<td>".$data["State"]."</td>  
-											<td>".$data["IDCard"]."</td>  
-											</tr>";
+											<td> ".$data["Name"]." </td> 
+											<td> ".$data["Price"]."€ </td> 
+											<td> ".$data["State"]." </td>  
+											<td> ".$data["IDCard"]." </td>  
+											</tr> ";
 								}
 								   $this->response['selectOffers'] .= "</table> <br>";
                             }else{
                                 $this->response['selectOffers'] = "<p>No se ha encontrado ninguna oferta</p> <br>";
 							}
 					echo $this->response['selectOffers'];
+				}
+				
+				public function inicioComments(){
+					echo "<h2> Comentarios de los usuarios de UtG</h2>";
+					echo "<p> Los siguientes comentarios han sido realizados por parte de algunos usuarios del sistema. Los comentarios
+					no se pueden modificar ni volver a realizar tras haberlo añadido a la página web.</p>";
 				}
 				
 				public function selectComments(){
@@ -106,6 +119,10 @@
 					echo $this->response['selectComments'];
 				}
 				
+				public function inicioUsers(){
+					echo "<p> Seleccione la identidad de la persona con la que quiere realizar el comentario: </p>";
+				}
+				
 				public function getUsers()	{
 					$connection = new mysqli($this->host, $this->user, $this->password, $this->database);
 					if ($connection->connect_errno) {
@@ -115,6 +132,8 @@
 					$query = "SELECT * FROM TUsers;";
 					$return = $connection->query($query);
 					$this->response['selectUsers'] =
+						"<label for=\"selectedUser\">Usuario seleccionado:</label>";
+					$this->response['selectUsers'] .=
 							"<select id=selectedUser name=selectedUser>";
 					if($return->num_rows >= 1){                              
                                 while ($data = $return->fetch_assoc()) {
@@ -129,6 +148,10 @@
 				
 				}
 				
+				public function inicioCards(){
+					echo "<p> Seleccione la carta que quiera comentar y que no haya sido comentada anteriormente por el usuario escogido. </p>";
+				}
+				
 				public function getCards()	{
 					$connection = new mysqli($this->host, $this->user, $this->password, $this->database);
 					if ($connection->connect_errno) {
@@ -138,6 +161,8 @@
 					$query = "SELECT * FROM TCards;";
 					$return = $connection->query($query);
 					$this->response['selectCards'] =
+						"<label for=\"selectedCard\">Carta seleccionada:</label>";
+					$this->response['selectCards'] .=
 							"<select id=selectedCard name=selectedCard>";
 					if($return->num_rows >= 1){                              
                                 while ($data = $return->fetch_assoc()) {
@@ -152,14 +177,25 @@
 				
 				}
 				
+				public function inicioInsertar(){
+					echo "<h2> Añade tu propio comentario</h2>";
+				}
+				
 				public function setStatementInicio(){
 					$this->response['inicioForm'] =
-						"<form method=\"post\" action=\"\" name=\"form\">";
+						"<form method=\"post\" name=\"form\">";
 					echo $this->response['inicioForm'];						
+				}
+				
+				public function inicioTextComentario(){
+					echo "<p> A continuación introduzca su comentario, intente ser breve.</p>";
 				}
 				
 				public function  setTextComentario(){
 					$this->response['text'] =
+						"<label for=\"comentario\">Mensaje a comentar:</label>";
+					$this->response['text'] .=
+					
 						"<textarea id=\"comentario\" name=\"comentario\" required></textarea> <br>";
 					echo $this->response['text'];	
 				}
@@ -186,10 +222,20 @@
 					$comment =  $_POST['comentario'];
 					
 					$stmt->execute();
-					
-					echo "<p> Se ha ejecutado XD </p>";
+				}
+				
+				public function construirInicio(){
+					echo " <section>
+							<h2> Espacio de compras UtG</h2>
+							<p> Esta zona de la página web está destinada para que todo usuario pueda ver las ofertas de las cartas
+							actuales en el sistema y algunos comentarios de nuestros usuarios respecto a estas. </p>
+							<p> De momento el sistema está cerrado y solo está disponible para determinados usuarios y unas cartas 
+							específicas, pero estamos seguros de que a pesar de estar en un estado tan inicial podrás aprovecharlo. </p>
+						   </section>";
 				}
 			}
+			
+				
 			
 			$bd = new GestorBD();
 			
@@ -197,11 +243,18 @@
                 $bd->insertComment();
             }
 			
+			$bd -> construirInicio();
+			$bd -> inicioOffers();
 			$bd -> selectOffers();
+			$bd -> inicioComments();
 			$bd -> selectComments();
+			$bd -> inicioInsertar();
 			$bd -> setStatementInicio();
+			$bd -> inicioUsers();
 			$bd -> getUsers();
+			$bd -> inicioCards();
 			$bd -> getCards();
+			$bd -> inicioTextComentario();
 			$bd -> setTextComentario();
 			$bd -> setStatementFinal();
 		

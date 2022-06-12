@@ -21,7 +21,7 @@
 	
 	<body onload="aConversor.cargarDatos()">
 		<header>
-		<h1> Menú navegación - UtG </h1>
+		<h1> Zona de Gadgets - UtG </h1>
 			<nav>
 				  <a title="Página inicial de Uniovi the Gathering." href="index.html">Inicio</a>
 				  <a title="Historia sobre Magic the Gathering." href="historia.html">Historia</a>
@@ -34,22 +34,50 @@
 		</header>
 		
 		<main>
-			<p>Introduzca el valor de su carta en dolares (Separación con punto):</p>
-			<textarea title="valorOriginal" id = "valorOriginal">0</textarea>
-			<textarea title="valorCalculado" id = "valorCalculado" disabled></textarea>
-			<input type="button" value="Realizar cálculo" onclick="aConversor.aEuros()">
 			
-			<label for="iCarta">Seleccione la imagen de su carta para calcular su estado:</label>
-			<input id="iCarta" type="file" name="iCarta" onchange="evaluador.evaluarCarta()">
-			<p id="calidadCarta">Para evaluar la condición de su carta, adjúntela.</p>
+			<section>
+			<h2> Funcionalidad adicional de UtG</h2>
+				<p> Para realizar una oferta de carta en UtG es muy importante conocer algunos parámetros de la carta 
+				que se desea vender. Por eso en esta sección hemos añadido algunas herramientas útiles para subsanar cualquier
+				 dificultad que aparezca. 
+				</p>
+				<p> De momento el sistema solo cuenta con dos funcionalidades.
+				<ul>
+					<li>Conversor de Dolares a Euros. (Para nuestros usuarios de fuera de Europa)</li>
+					<li>Calculadora de calidad de carta. (Se sugiere que se contraste con la opinión de un profesional)</li>
+				</ul>
+			</section>
+
+			<section>
+						
+			<h2> Conversor de Dolares a Euros</h2>
+				<p>Introduzca el valor de su carta en dolares. (En caso de tener decimales separar con punto)</p>
+				<label for="valorOriginal">Valor original en euros:</label>
+				<textarea title="valorOriginal" id = "valorOriginal">0</textarea>
+				<br>
+				<label for="valorCalculado">Valor convertido en dolares:</label>
+				<textarea title="valorCalculado" id = "valorCalculado" disabled></textarea>
+				<br>
+				<p>Cuando se haya asegurado que el valor sea el correcto, clique el botón y aparecerá el precio convertido en
+					el espacio vacío derecho.</p>
+				<input type="button" value="Realizar cálculo" onclick="aConversor.aEuros()">
+			</section>
+			
+		
+			<section>
+				<h2> Calculadora de calidad</h2>
+				<label for="iCarta">Seleccione la imagen de su carta para calcular su estado clicando el botón:</label>
+				<input id="iCarta" type="file" name="iCarta" onchange="evaluador.evaluarCarta()">
+				<p id="calidadCarta">Para evaluar la condición de su carta, adjúntela. Tras eso, este texto se actualizará solo.</p>
+			</section>
 		</main>
 			
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
-				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />
-				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" />
-				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" />
-		</footer>	
+				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" title="Logo de la Universidad de Oviedo"/>
+				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" title="Logo de validez de HTML5"/>
+				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" title="Logo de validez de CSS3" />
+		</footer>
 	</body>
 
 </html>

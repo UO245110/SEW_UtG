@@ -2,31 +2,33 @@
 body{
 	display: grid;
 	grid-template-areas:
-    "header header header"
-    "main main main"
-    "footer footer footer";
-	grid-row-gap: 1em;
+    "header"
+    "main"
+    "footer";
+	grid-row-gap: 1.2em;
 }
 
 /* Especificidad =  001 */
 footer {
+	align-self: center;
 	grid-area: footer;
-    align-self: center;
 }
+
 /* Especificidad =  001 */
 main {
+	align-self: center;
 	grid-area: main;
-    align-self: center;
-    /*margin: auto;*/
+
 }
-/* specificity = 001 */
+
+/* Especificidad = 001 */
 nav {	
     align-self: center;
 }
 /* Especificidad =  001 */
 header{
-    grid-area: header;
 	text-align: center;
+    grid-area: header;
 }
 
 /* Especificidad =  001 */
@@ -34,5 +36,5 @@ header,
 footer,
 nav
 {
-  margin: 0.9em;
+  margin: 0.8em;
 }

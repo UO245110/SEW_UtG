@@ -2,51 +2,63 @@
 body {
     font-family: "Times New Roman", Times, serif;
     line-height: 1.8;
-    color: #981D3E;
-    background-color: #f6f6f6;
+    color: #861030;
+    background-color: #f8f8f8;
 	background-size: cover;
   }
+  
 /* Especificidad =  001 */
 h1,h2 {
     color: #7e122f;
     text-transform: uppercase;
     text-align: center;     
 }
+
 /* Especificidad =  001 */
 main{
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
+	padding-top: 0em;
+	padding-bottom: 2em;
+	padding-left: 3em;
+	padding-right: 4em;
 }
 
 /* Especificidad =  001 */
 footer{	
-	background-color:#505050;
+	background-color:#5b5b5b;
 	color: #ffffff;
 	text-align: center; 	
 }
+
 /* Especificidad =  011 */
 a:hover, a:active{
 	text-decoration: underline;
 }
+
 /* Especificidad =  001 */
 ul { 
-    list-style-type: square;
+    list-style-type: disc;
 }
+
+/* Especificidad =  001 */
+ol { 
+    list-style-type: upper-roman;
+}
+
 /* Especificidad =  001 */
 video {
-	max-width: 100%;
+	max-width: 80%;
     height: auto;
+	display: block;
+	margin: 0 auto;
 }
 /* Especificidad =  001 */
 img{
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+	margin: 0 auto;
     max-width: 100%;
 }
 /* Especificidad =  001 */
 audio {
-	max-width: 100%;
+	max-width: 80%;
     height: auto;
   }

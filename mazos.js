@@ -27,8 +27,11 @@ class Carta {
 		construirHTML(){
 			var main = document.getElementsByTagName('main')[0];	
 			
+			const pCarta = document.createElement("p");
+			pCarta.innerText = "Remplazos de la carta: " + this.nombre;
+			main.appendChild(pCarta);
+			
 			var ulRemplazosCarta = document.createElement("ul");
-			ulRemplazosCarta.innerText = "Remplazos de: " + this.nombre;
 			for (var index = 0; index < this.remplazos.length; index++) {
 				var liRemplazo = document.createElement("li");
 				liRemplazo.innerText = this.remplazos[index];
@@ -97,28 +100,36 @@ class Arquetipo{
 			}
 		}
 		
-		construirHTML(){
+		construirHTML(valorArquetipo, maximoArquetipo){
 			console.log("(CONSTRUYENDO MAZO) Añadido nombre arquetipo: " + this.nombre);
 			console.log("(CONSTRUYENDO MAZO) Añadido color arquetipo: " + this.colorPrincipal);
 			console.log("(CONSTRUYENDO MAZO) Añadido estilo juego arquetipo: " + this.estiloJuego);
 			
 			var main = document.getElementsByTagName('main')[0];				
 			
+			const pArquetipoActual = document.createElement("p");
+			pArquetipoActual.innerText = "Acualmente está viendo la baraja " + valorArquetipo + " de las " + maximoArquetipo + " posibles de la expansión seleccionada.";
+			main.appendChild(pArquetipoActual);
+			
 			const pNombreMazo = document.createElement("p");
-			pNombreMazo.innerText = "Nombre del arquetipo: " + this.nombre + ".";
+			pNombreMazo.innerText = "Nombre del arquetipo: " + this.nombre;
 			main.appendChild(pNombreMazo);
 			
 			const pColorMazo = document.createElement("p");
-			pColorMazo.innerText = "Color del arquetipo: " + this.colorPrincipal + ".";
+			pColorMazo.innerText = "Color del arquetipo: " + this.colorPrincipal;
 			main.appendChild(pColorMazo);
 			
 			const pEstiloJuegoMazo = document.createElement("p");
-			pEstiloJuegoMazo.innerText = "Estilo de juego del mazo: " + this.estiloJuego + ".";
+			pEstiloJuegoMazo.innerText = "Estilo de juego del mazo: " + this.estiloJuego;
 			main.appendChild(pEstiloJuegoMazo);
 			
 			
+			const pRivalesFavorables = document.createElement("p");
+			pRivalesFavorables.innerText = "Lista de rivales favorables: ";
+			main.appendChild(pRivalesFavorables);
+			
 			var ulRivalesFavorables = document.createElement("ul");
-			ulRivalesFavorables.innerText = "Lista de rivales favorables: "
+
 			for (var index = 0; index < this.rivalesFavorables.length; index++) {
 				var liRivalFavorable = document.createElement("li");
 				liRivalFavorable.innerText = this.rivalesFavorables[index];
@@ -126,8 +137,11 @@ class Arquetipo{
 			}
 			main.appendChild(ulRivalesFavorables);
 			
+			const pRivalesDesfavorables = document.createElement("p");
+			pRivalesDesfavorables.innerText = "Lista de rivales desfavorables: ";
+			main.appendChild(pRivalesDesfavorables);
+			
 			var ulRivalesDesfavorables = document.createElement("ul");
-			ulRivalesDesfavorables.innerText = "Lista de rivales desfavorables: "
 			for (var index = 0; index < this.rivalesDesfavorables.length; index++) {
 				var liRivalDesfavorable = document.createElement("li");
 				liRivalDesfavorable.innerText = this.rivalesDesfavorables[index];
@@ -153,6 +167,10 @@ class Set{
 			this.arquetipos = [];
 			this.iterador = 0;
 			this.maximo = 0;
+		}
+		
+		getSet(){
+				return this.iterador+1;
 		}
 		
 		setNombre(sNombre){
@@ -223,50 +241,52 @@ class Set{
 			}
 		}
 		
-		construirHTML(){
+		construirHTML(iteradorSet, maximoSet){
 			var main = document.getElementsByTagName('main')[0];
 			//Limpiamos el contenido: FALTA
 			main.innerHTML="";
 			
 			//Creo los botones:
-			const pBotonAvanzarArquetipo = document.createElement("button");
-			pBotonAvanzarArquetipo.innerText = "Itera arquetipo";
-			pBotonAvanzarArquetipo.setAttribute('onclick',"aLoader.colecciones[0].iteraArquetipo()");
-			main.appendChild(pBotonAvanzarArquetipo);
-			
-			//Creo los botones:
 			const pBotonAvanzarSet = document.createElement("button");
-			pBotonAvanzarSet.innerText = "Itera set";
+			pBotonAvanzarSet.innerText = "Avanzar a la siguiente expansión";
 			pBotonAvanzarSet.setAttribute('onclick',"aLoader.colecciones[0].iteraSet()");
 			main.appendChild(pBotonAvanzarSet);
 			
+			const pSetActual = document.createElement("p");
+			pSetActual.innerText = "Acualmente está viendo la expansión " + iteradorSet + " de las " + maximoSet + " posibles.";
+			main.appendChild(pSetActual);
+			
 			const pNombreCodigo = document.createElement("p");
-			pNombreCodigo.innerText = "Nombre del set: " + this.nombre + ". Código del set: " + this.codigo + ".";
+			pNombreCodigo.innerText = "Nombre de la expansión: " + this.nombre + ". Código de la expansión: " + this.codigo + ".";
 			main.appendChild(pNombreCodigo);
 
 			const pDescripcion = document.createElement("p");
-			pDescripcion.innerText = "Descripción del set: " + this.descripcion +".";
+			pDescripcion.innerText = "Temática de la expansión: " + this.descripcion;
 			main.appendChild(pDescripcion);
 			
 			const pFechas = document.createElement("p");
-			pFechas.innerText = "Inicio del set: " + this.fechaInicio + ". Final del set: " + this.fechaFin + ".";
+			pFechas.innerText = "Lanzamiento de la expansión: " + this.fechaInicio + ". Final de lanzamiento de la expansión: " + this.fechaFin + ".";
 			main.appendChild(pFechas);
 			
-			console.log("Estas imagenes");
-			console.log(this.imagenes);
 			//Faltan imágenes.
 			for (var index = 0; index < this.imagenes.length; index++) {
 				const imgEspecifica = document.createElement('img');
 				imgEspecifica.setAttribute('src',this.imagenes[index]);
-				imgEspecifica.setAttribute('alt', "Imagen promocional del set "+this.nombre);
+				imgEspecifica.setAttribute('alt', "Imagen número "+ index + " del set: "+this.nombre);
+				imgEspecifica.setAttribute('title', "Imagen promocional del set "+this.nombre);
 				main.appendChild(imgEspecifica);
-				console.log(imgEspecifica);
 			}
+			
+			//Creo los botones:
+			const pBotonAvanzarArquetipo = document.createElement("button");
+			pBotonAvanzarArquetipo.innerText = "Avanzar a la siguiente baraja";
+			pBotonAvanzarArquetipo.setAttribute('onclick',"aLoader.colecciones[0].iteraArquetipo()");
+			main.appendChild(pBotonAvanzarArquetipo);
 			
 			//Sets:
 			for (var index = 0; index < this.arquetipos.length; index++) {
 				if (index == this.iterador){
-					this.arquetipos[index].construirHTML();
+					this.arquetipos[index].construirHTML(this.getSet(),this.maximo);
 				}
 			}
 		}
@@ -285,6 +305,10 @@ class Coleccion{
 			this.maximo = this.maximo + 1;
 			console.log("(MAXIMO SET MODIFICADO) Valor: " +this.maximo);
 			//console.log("(SET) Añadido arquetipo: " + sArquetipo.nombre);
+		}
+		
+		getSet(){
+				return this.iterador+1;
 		}
 		
 		iteraSet(){
@@ -314,7 +338,7 @@ class Coleccion{
 		construirHTML(){
 			for (var index = 0; index < this.sets.length; index++) {
 				if (index == this.iterador){
-					this.sets[index].construirHTML();
+					this.sets[index].construirHTML(this.iterador+1, this.maximo);
 				}
 			}
 		}

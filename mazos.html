@@ -20,7 +20,7 @@
 	
 	<body onload="aLoader.cargarDatos()">
 		<header>
-		<h1> Menú navegación - UtG </h1>
+		<h1> Zona de Mazos - UtG </h1>
 			<nav>
 				  <a title="Página inicial de Uniovi the Gathering." href="index.html">Inicio</a>
 				  <a title="Historia sobre Magic the Gathering." href="historia.html">Historia</a>
@@ -33,14 +33,31 @@
 		</header>
 		
 		<main>
-			<button onclick="aLoader.colecciones[0].construirHTML()">Cargar colección</button>
+			
+			<section>
+			<h2> Colección online de Expansiones de Magic</h2>
+				<p> A continuación podrás ver las expansiones y sus respectivos mazos que están en nuestro sistema. Todavía estamos trabajando
+				en ello así que de momento hay muy pocas expansiones. </p>
+				<p> Pero antes que nada tenemos que recordarte unos pequeños conceptos fundamentales para entender nuestra pequeña colección </p>
+				
+				<ul>
+					<li>Nuestra colección está compuesta por varias expansiones.</li>
+					<li>A su vez cada expansión tiene varias barajas.</li>
+					<li>¡En pantalla solo te mostraremos una, pero podrás avanzar por las distintas expansiones
+						y barajas con los botones que te aparecerán tras cargar la colección.</li>
+				</ul>
+				<p> Recuerda que si tienes alguna duda puedes ler alguna de las lecturas recomendadas que te hemos citado en
+					<a title="Enlace a la guia de principiantes" href="index.html">la página principal </a>
+					donde se comentan algunos conceptos básicos del juego. ¡No te quedes con las dudas! </p>
+			</section>
+			<button onclick="aLoader.colecciones[0].construirHTML()">Pincha aquí para cargar la colección</button>
 		</main>
 			
 		<footer>
 			<p> Esta página web es el proyecto de la asignatura de Software Y Estándares Web 2021/2022</p>
-				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" />
-				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" />
-				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" />
+				<img src= "multimedia/Escudo_UO.png" alt= "Logo de UniOvi" title="Logo de la Universidad de Oviedo"/>
+				<img src= "multimedia/HTML5.png" alt= "HTML5 válido!" title="Logo de validez de HTML5"/>
+				<img src= "multimedia/CSS3.png" alt= "CSS3 válido!" title="Logo de validez de CSS3" />
 		</footer>	
 	</body>
 
